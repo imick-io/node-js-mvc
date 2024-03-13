@@ -1,19 +1,21 @@
 {
-  "name": "nodejsmvc",
+  "name": "nodejs-complete-guide",
   "version": "1.0.0",
-  "description": "",
+  "description": "Node MVC Example",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js",
+    "start": "node app.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/imick-io/node-js-mvc.git"
-  },
-  "author": "Michael B",
+  "author": "Michael Boutin",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/imick-io/node-js-mvc/issues"
+  "devDependencies": {
+    "nodemon": "^1.18.3"
   },
-  "homepage": "https://github.com/imick-io/node-js-mvc#readme"
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3"
+  }
 }

@@ -1,0 +1,17 @@
+.todo-form {
+  width: 20rem;
+  max-width: 90%;
+  margin: auto;
+}
+
+.todo-item {
+  width: 20rem;
+  max-width: 95%;
+  margin: auto;
+}
+
+.todo__title {
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: start;
+}
