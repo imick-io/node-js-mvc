@@ -2,6 +2,11 @@
   width: 20rem;
   max-width: 90%;
   margin: auto;
+  display: flex;
+}
+
+.todo-list {
+  margin-top: 2rem;
 }
 
 .todo-item {
