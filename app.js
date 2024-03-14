@@ -15,7 +15,7 @@ const todoRoutes = require("./routes/todo");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use(todoRoutes);
+app.use("/todos/", todoRoutes);
 
 app.use(errorController.get404);
 

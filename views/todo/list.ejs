@@ -6,7 +6,7 @@
     <%- include('../includes/navigation.ejs') %>
 
     <main>
-        <form class="todo-form" action="/add" method="POST">
+        <form class="todo-form" action="/todos/add" method="POST">
             <div class="form-control">
                 <label for="title">Title</label>
                 <input type="text" name="title" id="title">
@@ -22,6 +22,11 @@
                             <header class="card__header">
                                 <h2 class="todo__title"><%= item.title %></h2>
                             </header>
+                            <a href="/todos/<%= item.id %>">Details</a>
+
+                            <form action="/todos/<%= item.id %>/delete" method="POST">
+                                <button>delete</button>
+                            </form>
                         </article>
                     <% } %>
                 </div>

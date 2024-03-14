@@ -18,9 +18,9 @@ const getTodoFromFile = (cb) => {
 };
 
 module.exports = class Todo {
-  constructor(title, description) {
+  constructor(title) {
+    this.id = (Math.random().toString() * 10000000000).toFixed(0);
     this.title = title;
-    this.description = description;
   }
 
   save() {
@@ -32,7 +32,25 @@ module.exports = class Todo {
     });
   }
 
+  static delete(todoId) {
+    getTodoFromFile((items) => {
+      const updatedItems = items.filter((i) => i.id !== todoId);
+      fs.writeFile(p, JSON.stringify(updatedItems), (err) => {
+        if (!err) {
+          console.log("Deleted todo item");
+        }
+      });
+    });
+  }
+
   static fetchAll(cb) {
     getTodoFromFile(cb);
+  }
+
+  static find(id, cb) {
+    getTodoFromFile((items) => {
+      const item = items.find((i) => i.id === id);
+      cb(item);
+    });
   }
 };
